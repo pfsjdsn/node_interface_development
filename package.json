@@ -1,0 +1,19 @@
+{
+  "name": "node_interface_development",
+  "version": "1.0.0",
+  "description": "node 接口开发",
+  "main": "a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfsjdsn/node_interface_development.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pfsjdsn/node_interface_development/issues"
+  },
+  "homepage": "https://github.com/pfsjdsn/node_interface_development#readme"
+}
