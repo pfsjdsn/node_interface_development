@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pfsjdsn/node_interface_development/issues"
   },
-  "homepage": "https://github.com/pfsjdsn/node_interface_development#readme"
+  "homepage": "https://github.com/pfsjdsn/node_interface_development#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
 }
