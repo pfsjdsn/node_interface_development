@@ -10,6 +10,7 @@ http.createServer((req, res) => {
     // 写法二 简写
     // res.end('content')
     console.log(req.url);
+    // 把页面渲染到页面上
     fs.readFile(`./${req.url}`, (err, data) => {
         if (err) {
             // 响应头
