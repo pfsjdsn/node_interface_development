@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <p>node管理系统</p>
+        <input type="text" id="username"><br>
+        <input type="password" id="password"><br>
+        <button id="login">登录</button><br>
+        <button id="reg">注册</button><br>
+    </div>
+    <script>
+        // 登录接口
+        $('#login').click(function () {
+            $.ajax({
+                url: "/login",
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                },
+                dataType: 'json',
+                success (res) {
+                    if (res.err) {
+                        alert(res.msg)
+                    } else {
+                        alert('登录成功')
+                        location.href = 'admin.html'
+                    }
+                }
+            })
+        })
+
+        // 注册接口
+        $('#reg').click(function () {
+            $.ajax({
+                url: "/reg",
+                method: 'post',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                },
+                dataType: 'json',
+                success (res) {
+                    if (res.err) {
+                        alert(res.msg)
+                    } else {
+                        alert('注册成功')
+                    }
+                }
+            })
+        })
+    </script>
+    <style>
+        body {
+            background-color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .box {
+            width: 400px;
+            padding: 20px;
+            margin: 60px auto;
+            background: #fff;
+        }
+
+        .box p {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .box input {
+            height: 58px;
+            border: 1px #ddd solid;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 94%;
+            font-size: 18px;
+        }
+
+        .box button {
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 20px;
+            height: 50px;
+            border: none;
+            background: #f60;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .box button:last-child {
+            background: none;
+            color: #f60;
+            border: 1px #f60 solid;
+        }
+    </style>
+</body>
+
+</html>
